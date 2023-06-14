@@ -1,0 +1,14 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "本地计算机": [
+      "out\\build\\Release",
+      "out\\install\\Release"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\SDK",
+    "\\SDK\\lib"
+  ],
+  "PreviewInSolutionExplorer": false
+}

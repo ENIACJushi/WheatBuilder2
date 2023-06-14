@@ -18,22 +18,20 @@
 // Please FILL UP the content in this area before developing your plugin, and DO NOT modify any code
 // outside this area.
 
-static_assert(false, "Please modify your plugin information below and delete this line!");
-
 // The basic descriptions of your plugin
 // Note that the the plugin name CAN ONLY CONTAIN Enlish alphabet, digit, dash(-) and
 // underscore(_). 
-#define PLUGIN_NAME "HelloWorldPrinter"
+#define PLUGIN_NAME "WheatBuilder"
 // Describe what your plugin does
 // We recommend you start the introduction with a third-person singular verb.
-#define PLUGIN_INTRODUCTION "Prints \"Hello, World!\" in the console."
-#define PLUGIN_AUTHOR "Me"
+#define PLUGIN_INTRODUCTION "QWQ"
+#define PLUGIN_AUTHOR "ENIACJushi"
 
 // The version of your plugin. If you do not know how to set it, please refer
 // to https://semver.org/ .
-#define PLUGIN_VERSION_MAJOR 0
-#define PLUGIN_VERSION_MINOR 1
-#define PLUGIN_VERSION_REVISION 0
+#define PLUGIN_VERSION_MAJOR 1
+#define PLUGIN_VERSION_MINOR 2
+#define PLUGIN_VERSION_REVISION 2
 #define PLUGIN_VERSION_BUILD 0
 #define PLUGIN_VERSION_ACTIONS 0
 
@@ -45,7 +43,7 @@ static_assert(false, "Please modify your plugin information below and delete thi
 // please start the latest version of LiteLoaderBDS and get the protocol version.
 // If you are confident about the version compatibility of your plugin, you can
 // just comment this line (NOT RECOMMENDED).
-#define TARGET_BDS_PROTOCOL_VERSION 582
+#define TARGET_BDS_PROTOCOL_VERSION 589
 
 // ***************************************************************************************
 // ***************************************************************************************
@@ -64,7 +62,7 @@ static_assert(false, "Please modify your plugin information below and delete thi
 
 #elif PLUGIN_VERSION_STATUS == PLUGIN_VERSION_DEV
 
-#define PLUGIN_FILE_VERSION_FLAG VS_FF_DEBUG
+#define PLUGIN_FILE_VERSION_FLAG VS_FF_
 #define PLUGIN_LLVERSION_STATUS ll::Version::Dev
 #define PLUGIN_FILE_VERSION_STRING TO_VERSION_STRING(PLUGIN_VERSION_MAJOR.PLUGIN_VERSION_MINOR.PLUGIN_VERSION_REVISION.PLUGIN_VERSION_ACTIONS DEV)
 
