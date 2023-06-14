@@ -29,14 +29,14 @@
   - **mvc generate [start_x] [start_z] [end_x] [end_z] [dim_id]**
     - Generate chunks, and save them to the world.
 
-#### > Useful message
+#### > Useful knowledge
 
 1. Changes to the biome will require re-entry into the world to be observed.
 2. dimId：0 OverWorld；1 Nether；2 The End；
 3. Chunk and chunk coordinate
- chunk：https://minecraft.fandom.com/wiki/Chunk
- chunk coordinate： The chunk coordinate of a block at (x, z) is (x/16, z/16), rounded down.
- Example: block (3, 64, 3) is in the chunk (0, 0).
+    - chunk：https://minecraft.fandom.com/wiki/Chunk
+    - chunk coordinate： The chunk coordinate of a block at (x, z) is (x/16, z/16), rounded down.
+    - Example: block (3, 64, 3) is in the chunk (0, 0).
 
 #### > biomeId：
 - IDs here are a little different from the one described on the wiki, but the name is exactly the same, and due to some features, only ids from 0 to 50 can be used in commands.
