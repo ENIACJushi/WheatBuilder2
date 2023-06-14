@@ -1,29 +1,45 @@
-# LiteLoaderBDS C++ Plugin Template
 
-The template repository for LiteLoaderBDS C++ plugin development.
+#### > Current supported version：1.20.0
 
-## Usage
+#### > Commands
 
-* Write and build your plugin
+- Basic Edit Commands：
+  - **be biome get [pos] [dimId]** 
+    - Get biome at [pos],[dimId]
+  - **be biome set_id [pos] [dimId] [biomeId]** 
+    - Set biome at [pos],[dimId] by ID.
+  - **be biome set_name [pos] [dimId] [biomeName]** 
+    - Set biome at [pos],[dimId] by name.
+  - **be biomes replace [startPos] [endPos] [dimId] [originId] [replaceId]** 
+    - Replace biomes in rectangle area to [replaceId] whose id equals [replaceId], if originId equals -1, it would replace all.
+  - **be biomes replace [startPos] [endPos] [dimId] [originName] [replaceName]** 
+    - Replace biomes in rectangle area to [replaceName] whose name equals [replaceName], if [originName] equals "every", it would replace all.
 
-  Please refer to [LiteLoaderBDS C++ Plugin Development Documentation](https://cpp.docs.litebds.com/en/) or [LiteLoaderBDS C++ 插件开发文档](https://cpp.docs.litebds.com/zh-Hans/).
+- Save and load with chunk as the smallest unit：
+  - **mvc save [start_x] [start_z] [end_x] [end_z] [dim_id] [file_name] [save]** 
+    - Save the biomes of all chunks with chunk coordinates between [start_x] [start_z] and [end_x] [end_z] (including boundaries).
+    - Directory is "plugins/WheatBuilder/Area/file_name".
+    - Ungenerated chunks will automatically generated and saved to the world when [save] is true.
+    - Note：[dim_id] can currently only be 0 (overworld).
 
-* Edit README.md and LICENSE
+  - **mvc load [start_x] [start_z] [dim_id] [file_name]**
+    - Load the saved chunk biomes out, starting with [start_x] [start_z].
+    - Ungenerated chunks will automatically generated and saved to the world.
+    - Note：[dim_id] can currently only be 0 (overworld).
+  - **mvc generate [start_x] [start_z] [end_x] [end_z] [dim_id]**
+    - Generate chunks, and save them to the world.
 
-  You ought not to keep the original README.md, for it contains instructions on how to build your own plugin, which might not fit your plugin repository. The README.md of your repository should contain instructions on how to build, install and use your plugin.
+#### > Useful message
 
-  You don't necessarily want your repository to be open sourced under the Unlicense, so please choose your own license in place of the `LICENSE` file.
+1. Changes to the biome will require re-entry into the world to be observed.
+2. dimId：0 OverWorld；1 Nether；2 The End；
+3. Chunk and chunk coordinate
+- chunk：https://minecraft.fandom.com/wiki/Chunk
+- chunk coordinate： The chunk coordinate of a block at (x, z) is (x/16, z/16), rounded down.
+- Example: block (3, 64, 3) is in the chunk (0, 0).
 
-## For Beta Developers
+4. biomeId：
+- IDs here are a little different from the one described on the wiki, but the name is exactly the same, and due to some features, only ids from 0 to 50 can be used in commands.
 
-If you would like to experience the latest features for plugins in beta versions of LiteLoaderBDS, you can switch the branch of the SDK to beta. Run the commands below under the plugin repository:
-
-```sh
-git submodule set-branch --branch beta SDK
-git submodule update --init --remote
-```
-
-## License
-
-This repository is open source under the Unlicense.
-Please refer to [the license file](LICENSE) for further information.
+#### > THANKS：
+幻化成疯 Provides save chunk method.
