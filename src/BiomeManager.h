@@ -63,18 +63,15 @@ public:
 		try {
 			std::cout<<1;
 			std::pair<ChunkPos*, ChunkBlockPos> chunkPos = PositionTool::block2chunkPos(x, y, z);
-			logger.info("2");
-			logger.info(fmt::format("x: {}, y{},z{}", x,y,z));
-			logger.info(fmt::format("dim_id: {}", dim_id));
+
 			// auto levelChunk = Global<ChunkSource>->getExistingChunk(*chunkPos.first);
 			auto dimension = Global<Level>->getDimension(AutomaticID<Dimension, int>(dim_id)).get();
-			logger.info("3");
+
 
 			ChunkSource& chunkSource = dimension->getChunkSource();
-			logger.info("4");
+
 			std::shared_ptr<class LevelChunk> levelChunk = chunkSource.getExistingChunk(*chunkPos.first);
 
-			logger.info("5");
 			if (levelChunk != nullptr) {
 				auto& biome = levelChunk->getBiome(chunkPos.second);
 				return std::pair(biome.getId(), biome.getName());
@@ -82,7 +79,6 @@ public:
 			else {
 				return std::pair(-1, "error");
 			}
-			logger.info("4");
 		}
 		catch (const std::exception& ex) {
 			return std::pair(-1, "error");
